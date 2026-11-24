@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /web-dong-ho/
+
+    # Bỏ qua các tệp và thư mục tĩnh có sẵn
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Điều hướng về index.php với tham số route
+    RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
+</IfModule>
